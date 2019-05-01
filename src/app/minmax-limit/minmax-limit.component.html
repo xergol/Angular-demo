@@ -1,43 +1,67 @@
-<div class="container">
+<div class="container" *ngIf="inputOptions.eventType=='Unit'">
   <div class="row">
     <div class="col">
-      <form class="example-form">
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="min" value="min">
-        </mat-form-field>
-      
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="max" value="max">
-        </mat-form-field>
-        <button mat-raised-button>Apply</button>
+      <form class="example-form" #f="ngForm" (ngSubmit)="make_selection()">
+        <!--<mat-form-field class="example-full-width">-->
+          <!--<input matInput placeholder="min" value="min">-->
+        <!--</mat-form-field>-->
+
+        <!--<mat-form-field class="example-full-width">-->
+          <!--<input matInput placeholder="max" value="max">-->
+        <!--</mat-form-field>-->
+        <div class="form-group" >
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required />
+          <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+            <div *ngIf="firstName.errors.required">First Name is required</div>
+          </div>
+        </div>
+        <button mat-raised-button >Apply</button>
       </form>
     </div>
   </div>
 </div>
 
 
-<div class="container">
+<div class="container" *ngIf="inputOptions.eventType=='CTOpMode'">
   <div class="row">
     <div class="col">
-      <mat-checkbox>Check me!</mat-checkbox>
-      <mat-checkbox>Check me!</mat-checkbox>
-      <mat-checkbox>Check me!</mat-checkbox>
-      <mat-checkbox>Check me!</mat-checkbox>
-      <mat-checkbox>Check me!</mat-checkbox>
-      <button mat-raised-button>Apply</button>
+      <!--<mat-checkbox>Check me!</mat-checkbox>-->
+      <!--<mat-checkbox>Check me!</mat-checkbox>-->
+      <!--<mat-checkbox>Check me!</mat-checkbox>-->
+      <!--<mat-checkbox>Check me!</mat-checkbox>-->
+      <!--<mat-checkbox>Check me!</mat-checkbox>-->
+      <!--<button mat-raised-button (click)="make_selection({'val': '2'})">Apply</button>-->
+      <form class="example-form" #f="ngForm" (ngSubmit)="make_selection()">
+        <!--<mat-form-field class="example-full-width">-->
+        <!--<input matInput placeholder="min" value="min">-->
+        <!--</mat-form-field>-->
+
+        <!--<mat-form-field class="example-full-width">-->
+        <!--<input matInput placeholder="max" value="max">-->
+        <!--</mat-form-field>-->
+        <div class="form-group" >
+          <label for="firstName">Second First Name</label>
+          <input type="text" class="form-control" name="firstName" [(ngModel)]="model.secondFirstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required />
+          <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+            <div *ngIf="firstName.errors.required">First Name is required</div>
+          </div>
+        </div>
+        <button mat-raised-button >Apply</button>
+      </form>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <mat-checkbox>Check me!</mat-checkbox>
-      <mat-checkbox>Check me!</mat-checkbox>
-      <mat-checkbox>Check me!</mat-checkbox>
-      <mat-checkbox>Check me!</mat-checkbox>
-      <mat-checkbox>Check me!</mat-checkbox>
-      <button mat-raised-button>Apply</button>
-    </div>
-  </div>
-</div>
+<!--<div class="container">-->
+  <!--<div class="row">-->
+    <!--<div class="col">-->
+      <!--<mat-checkbox>Check me!</mat-checkbox>-->
+      <!--<mat-checkbox>Check me!</mat-checkbox>-->
+      <!--<mat-checkbox>Check me!</mat-checkbox>-->
+      <!--<mat-checkbox>Check me!</mat-checkbox>-->
+      <!--<mat-checkbox>Check me!</mat-checkbox>-->
+      <!--<button mat-raised-button>Apply</button>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->

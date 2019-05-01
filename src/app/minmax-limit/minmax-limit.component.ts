@@ -10,11 +10,13 @@ import { PeriodicElement } from '../app.component';
 export class MinmaxLimitComponent implements OnInit {
 
   constructor( public dialogRef: MatDialogRef<MinmaxLimitComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: PeriodicElement) { }
+    @Inject(MAT_DIALOG_DATA) public inputOptions: PeriodicElement) { }
 
-
+  model: any = {};
   ngOnInit() {
-    console.log(this.data);
   }
 
+  make_selection() {
+    this.dialogRef.close(this.model);
+  }
 }

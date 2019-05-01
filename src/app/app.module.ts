@@ -12,6 +12,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MinmaxLimitComponent } from './minmax-limit/minmax-limit.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MinmaxLimitComponent } from './minmax-limit/minmax-limit.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatCheckboxModule,
     MatTableModule,
     MatSelectModule,
